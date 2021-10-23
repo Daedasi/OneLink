@@ -17,8 +17,6 @@ public class EmpleadoDaoJDBC {
                                                             "LEFT JOIN tiposDocumento ON Empleados.idTipoDocumento=tiposDocumento.idTiposDocumento\n" +
                                                             "LEFT JOIN Areas ON Empleados.idArea=Areas.idAreas\n" +
                                                             "LEFT JOIN SubAreas ON Empleados.idSubArea = SubAreas.idSubAreas WHERE numDoc LIKE ? OR nombre LIKE ? ";
-    private static final String SQL_SELECT_AREAS = "SELECT * FROM Areas";
-    private static final String SQL_SELECT_SUBAREAS = "SELECT * FROM SubAreas WHERE SubAreas.idAreas=?";
     private static final String SQL_SELECT_BY_ID = "SELECT * FROM Empleados WHERE idEmpleado = ?";
     private static final String SQL_INSERT = "INSERT INTO Empleados(nombre,apellido,idTipoDocumento,numDoc,idArea,idSubArea)"
             + " VALUES (?,?,?,?,?,?)";

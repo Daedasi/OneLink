@@ -5,30 +5,21 @@ public class EmpleadoDTO {
     private int idEmpleado;
     private String nombre;
     private String apellido;
-    private int tipoDocumento;
-    private String documento;
-    private int area;
-    private int subarea;
+    private TipoDocumento tipoDocumento;
+    
+    private Area area;
+    private SubArea subarea;
     
 
     public EmpleadoDTO() {
     }
 
-    public EmpleadoDTO(String nombre, String apellido, int tipoDocumento, String documento, int area, int subarea) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.tipoDocumento = tipoDocumento;
-        this.documento = documento;
-        this.area = area;
-        this.subarea = subarea;
-    }
-
-    public EmpleadoDTO(int idEmpleado, String nombre, String apellido, int tipoDocumento, String documento, int area, int subarea) {
+    public EmpleadoDTO(int idEmpleado, String nombre, String apellido, TipoDocumento tipoDocumento, Area area, SubArea subarea) {
         this.idEmpleado = idEmpleado;
         this.nombre = nombre;
         this.apellido = apellido;
         this.tipoDocumento = tipoDocumento;
-        this.documento = documento;
+        
         this.area = area;
         this.subarea = subarea;
     }
@@ -57,46 +48,31 @@ public class EmpleadoDTO {
         this.apellido = apellido;
     }
 
-    public int getTipoDocumento() {
+    public TipoDocumento getTipoDocumento() {
         return tipoDocumento;
     }
 
-    public void setTipoDocumento(int tipoDocumento) {
+    public void setTipoDocumento(TipoDocumento tipoDocumento) {
         this.tipoDocumento = tipoDocumento;
     }
 
-    public String getDocumento() {
-        return documento;
-    }
 
-    public void setDocumento(String documento) {
-        this.documento = documento;
-    }
-
-    public int getArea() {
+    public Area getArea() {
         return area;
     }
 
-    public void setArea(int area) {
+    public void setArea(Area area) {
         this.area = area;
     }
 
-    public int getSubarea() {
+    public SubArea getSubarea() {
         return subarea;
     }
 
-    public void setSubarea(int subarea) {
+    public void setSubarea(SubArea subarea) {
         this.subarea = subarea;
     }
-
-    @Override
-    public String toString() {
-        return "Empleado{" + "idEmpleado=" + idEmpleado + ", nombre=" + nombre + ", apellido=" + apellido + ", tipoDocumento=" + tipoDocumento + ", documento=" + documento + ", area=" + area + ", subarea=" + subarea + '}';
-    }
-    
     
     
 
-  
-    
 }

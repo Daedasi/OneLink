@@ -2,40 +2,29 @@ package datos;
 
 import domain.TipoDocumento;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class TipoDocumentoDaoJDBC {
 
     private static final String SQL_SELECT = "SELECT * FROM tiposDocumento";
 
-    public List<TipoDocumento> listarDocumentos{
-    Connection conn = null;
-    PreparedStatement smt = null;
-    ResultSet rs = null;
-    List<TipoDocumento> tiposDoc = new ArrayList<TipoDocumento>();
-        /*
-    Connection conn = null;
+    public List<TipoDocumento> listarDocumentos(){
+        Connection conn = null;
         PreparedStatement smt = null;
         ResultSet rs = null;
-        EmpleadoDTO empleado = null;
-
-        List<EmpleadoDTO> empleados = new ArrayList<EmpleadoDTO>();
+        TipoDocumento tipoDoc=null;
+        List<TipoDocumento> tiposDoc = new ArrayList<TipoDocumento>();
         try {
             conn = Conexion.getConnection();
-            smt = conn.prepareStatement(SQL_SELECT_EMPLEADOS);
+            smt = conn.prepareStatement(SQL_SELECT);
             rs = smt.executeQuery();
             while (rs.next()) {
-                int idEmpleado = rs.getInt("id_cliente");
-                String nombre = rs.getString("nombre");
-                String apellido = rs.getString("apellido");
-                String tipoDocumento = rs.getString("TipoDocumento");
-                String numDoc = rs.getString("numDoc");
-                String Area = rs.getString("Area");
-                String SubArea = rs.getString("SubArea");
+                int idTipoDoc = rs.getInt("idtiposDocumento");
+                String label = rs.getString("label");
+                
 
-                empleado = new EmpleadoDTO(idEmpleado, nombre, apellido, tipoDocumento, numDoc, Area, SubArea);
-                empleados.add(empleado);
+                tipoDoc = new TipoDocumento(idTipoDoc, label);
+                tiposDoc.add(tipoDoc);
             }
 
         } catch (SQLException ex) {
@@ -46,9 +35,8 @@ public class TipoDocumentoDaoJDBC {
             Conexion.close(conn);
         }
 
-        return empleados;
-    
-    */
+        return tiposDoc;
+        
     }
 
 }

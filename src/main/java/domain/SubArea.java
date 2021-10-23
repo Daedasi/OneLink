@@ -5,13 +5,15 @@ package domain;
 public class SubArea {
     
     private int idSubArea;
+    private int idArea;
     private String label;
 
     public SubArea() {
     }
 
-    public SubArea(int idSubArea, String label) {
+    public SubArea(int idSubArea, int idArea, String label) {
         this.idSubArea = idSubArea;
+        this.idArea = idArea;
         this.label = label;
     }
 
@@ -23,6 +25,14 @@ public class SubArea {
         this.idSubArea = idSubArea;
     }
 
+    public int getIdArea() {
+        return idArea;
+    }
+
+    public void setIdArea(int idArea) {
+        this.idArea = idArea;
+    }
+
     public String getLabel() {
         return label;
     }
@@ -30,6 +40,7 @@ public class SubArea {
     public void setLabel(String label) {
         this.label = label;
     }
+
     
     
     
