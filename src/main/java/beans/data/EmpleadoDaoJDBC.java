@@ -1,6 +1,10 @@
-package datos;
+package beans.data;
 
-import domain.*;
+import beans.model.Empleado;
+import beans.model.EmpleadoDTO;
+import beans.model.Area;
+import beans.model.SubArea;
+import beans.model.TipoDocumento;
 import java.sql.*;
 import java.util.*;
 

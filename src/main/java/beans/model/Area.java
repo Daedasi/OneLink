@@ -1,28 +1,21 @@
 
-package domain;
+package beans.model;
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 
-public class SubArea {
-    
-    private int idSubArea;
+@Named
+@RequestScoped
+public class Area {
     private int idArea;
     private String label;
 
-    public SubArea() {
+    public Area() {
     }
 
-    public SubArea(int idSubArea, int idArea, String label) {
-        this.idSubArea = idSubArea;
+    public Area(int idArea, String label) {
         this.idArea = idArea;
         this.label = label;
-    }
-
-    public int getIdSubArea() {
-        return idSubArea;
-    }
-
-    public void setIdSubArea(int idSubArea) {
-        this.idSubArea = idSubArea;
     }
 
     public int getIdArea() {
@@ -40,8 +33,6 @@ public class SubArea {
     public void setLabel(String label) {
         this.label = label;
     }
-
-    
     
     
 }

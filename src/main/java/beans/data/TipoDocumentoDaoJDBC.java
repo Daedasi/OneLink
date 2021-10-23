@@ -1,31 +1,30 @@
+package beans.data;
 
-package datos;
-
-import domain.Area;
+import beans.model.TipoDocumento;
 import java.sql.*;
 import java.util.*;
 
+public class TipoDocumentoDaoJDBC {
 
-public class AreaDaoJDBC {
-        private static final String SQL_SELECT = "SELECT * FROM Areas";
-    
-       public List<Area> listarAreas(){
+    private static final String SQL_SELECT = "SELECT * FROM tiposDocumento";
+
+    public List<TipoDocumento> listarDocumentos(){
         Connection conn = null;
         PreparedStatement smt = null;
         ResultSet rs = null;
-        Area area;
-        List<Area> areas = new ArrayList<>();
+        TipoDocumento tipoDoc=null;
+        List<TipoDocumento> tiposDoc = new ArrayList<TipoDocumento>();
         try {
             conn = Conexion.getConnection();
             smt = conn.prepareStatement(SQL_SELECT);
             rs = smt.executeQuery();
             while (rs.next()) {
-                int idAreas = rs.getInt("idAreas");
+                int idTipoDoc = rs.getInt("idtiposDocumento");
                 String label = rs.getString("label");
                 
 
-                area = new Area(idAreas, label);
-                areas.add(area);
+                tipoDoc = new TipoDocumento(idTipoDoc, label);
+                tiposDoc.add(tipoDoc);
             }
 
         } catch (SQLException ex) {
@@ -36,9 +35,8 @@ public class AreaDaoJDBC {
             Conexion.close(conn);
         }
 
-        return areas;
+        return tiposDoc;
         
     }
 
-    
 }

@@ -1,6 +1,11 @@
 
-package domain;
+package beans.model;
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+
+@Named
+@RequestScoped
 public class EmpleadoDTO {
     private int idEmpleado;
     private String nombre;

@@ -1,7 +1,7 @@
 
-package datos;
+package beans.data;
 
-import domain.SubArea;
+import beans.model.SubArea;
 import java.sql.*;
 import java.util.*;
 

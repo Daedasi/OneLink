@@ -1,4 +1,4 @@
-package datos;
+package beans.data;
 
 import java.sql.*;
 
